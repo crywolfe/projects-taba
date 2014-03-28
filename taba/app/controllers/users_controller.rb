@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
 	def index
 		
+		
 
 	end
 

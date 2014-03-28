@@ -5,10 +5,12 @@ Taba::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  resources :user
+  resources :users
 
   get '/session/new' => 'session#new'
   post '/session' => 'session#create'
+  get  '/logout' => 'session#destroy'
+
 
 
   # Example of regular route:

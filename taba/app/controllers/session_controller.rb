@@ -4,14 +4,19 @@ class SessionController < ApplicationController
 	end
 
 	def create
-	end
-
-	def current_user
-    @current_user ||= User.find_by(id: session[:user_id])
+    user = User.find_by(email: params[:email])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to(users_path) #instead of "/users"
+    else
+      render(:new)
+    end
   end
 
-  def logged_in?
-    current_user.present?
+  def destroy
+    session[:user_id] = nil
+    redirect_to(root_path)
   end
+	
 
 end
