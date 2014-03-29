@@ -1,1 +1,22 @@
-index.html.erb
+<%= link_to("Home", root_path) %>
+<h3> <%= link_to("Add", new_journal_entry_path) %> a journal entry </h3>
+<h3>Hello <%= current_user.name %> </h3>
+
+<h3>Thank you for your writing in your journal.</h3>
+<h3>Writing in a journal is a good habit to have.</h3>
+
+
+<% @journal_entries.each do |entry| %>
+	<%= entry.id %>
+ 	<%= entry.separate_date_from_time %><br>
+
+
+
+
+<% end %>
+
+
+
+<br>
+I need to parse the date...
+

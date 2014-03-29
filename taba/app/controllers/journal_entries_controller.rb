@@ -1,9 +1,12 @@
 class JournalEntriesController < ApplicationController
 
 	def index
+		@journal_entries = JournalEntry.all
+		binding.pry
 	end
 
 	def new
+		@journal_entry = JournalEntry.new
 	end
 
 	def create
@@ -12,7 +15,7 @@ class JournalEntriesController < ApplicationController
 			)
 
 		if @journal_entry.save
-			redirect_to(journal_entry)
+			redirect_to(journal_entries_path)
     else
       render :new
     end
