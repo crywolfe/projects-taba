@@ -7,8 +7,10 @@
 
 
 <% @journal_entries.each do |entry| %>
+	<% unparsed_date = entry.created_at %>
+	<% parsed_date = unparsed_date.strftime("%m - %d - %y - %A") %>
 	<%= entry.id %>
- 	<%= entry.separate_date_from_time %><br>
+ 	<%= parsed_date %><br>
 
 
 

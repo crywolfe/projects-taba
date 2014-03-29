@@ -2,18 +2,16 @@ class JournalEntry < ActiveRecord::Base
 	belongs_to :user
 
 	#create method to separate date from time
-	def self.separate_date_from_time
-		journal_entries = JournalEntry.all
+	# def separate_date_from_time
+	# 	@journal_entry = JournalEntry.find_by
 
-		require "date"
+	# 	require "date"
 
-		unparsed_date = journal_entries.created_at
-		unparsed_date.parse(journal_entries.created_at)
+	# 	unparsed_date = @journal_entries.created_at
+	# 	parsed_date = unparsed_date.strftime("%A %m/%d %y")
+	# 	return parsed_date
 
-
-
-
-	end
+	# end
 
 
 end
