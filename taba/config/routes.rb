@@ -6,6 +6,7 @@ Taba::Application.routes.draw do
   root 'welcome#index'
 
   resources :users
+  resources :journal_entries
 
   get '/session/new' => 'session#new'
   post '/session' => 'session#create'

@@ -4,9 +4,9 @@
 	<h3>Hello <%= current_user.name %> </h3>
 	<h3>Welcome to your mood tracking journal.</h3>
 	<h3>Can't wait to hear about your adventure today!</h3>
-
+<%= link_to "Home", root_path %>
 	<ul>
-		<p>Write a Journal Entry</p>
+		<p><%= link_to("Write", new_journal_entry_path) %> a Journal Entry</p>
 		<p>View your Journal Entries</p>
 		<p>View your Mood History</p>
 	</ul>
