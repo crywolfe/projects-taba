@@ -1,18 +1,18 @@
 <%= link_to("Home", root_path) %>
 <h3>Hello <%= current_user.name %> </h3>
 
-<h3> <%= link_to("Add", new_journal_entry_path) %> a journal entry </h3>
+<h3> <%= link_to("Add", new_user_journal_entry_path) %> a journal entry </h3>
 
 <h3>Thank you for your writing in your journal.</h3>
 <h3>Writing in a journal is a good habit to have.</h3>
 
 <!-- list each entry -->
-<% @journal_entries.each do |entry| %>
+<% @journal_entries.reverse.each do |entry| %>
 <!-- parse the date to obtain the date and day of week -->
 	<% unparsed_date = entry.created_at %>
 	<% parsed_date = unparsed_date.strftime("%m - %d - %y - %A") %>
 	Entry No. <%= entry.id %> -->
- 	<a href="/journal_entries/<%= entry.id %>"><%= parsed_date %></a><br>
+ 	<a href="/users/<%= current_user.id %>/journal_entries/<%= entry.id %>"><%= parsed_date %></a><br>
 
 <% end %>
 

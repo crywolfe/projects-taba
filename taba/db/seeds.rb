@@ -20,6 +20,8 @@ new_user2 = User.create(
 	email: "john@gmail.com",
 	password: "12345678",
 	password_confirmation: "12345678",
-	admin: "t"
-
+	admin: "f"
 	)
+
+new_journal_entry = JournalEntry.create(
+	body: "I had such a wonderful time today!  LOL alot.  Great conversation with my wife.  I spent my whole day programming.\n  My lunch was ok... but dinner at Chipotle was +1!")

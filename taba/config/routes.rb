@@ -5,8 +5,11 @@ Taba::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  resources :users
-  resources :journal_entries
+  resources :users do
+    resources :journal_entries
+  end
+  
+  resources :sample_phrases
 
   get '/session/new' => 'session#new'
   post '/session' => 'session#create'
