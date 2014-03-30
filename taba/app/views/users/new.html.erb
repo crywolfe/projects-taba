@@ -1,0 +1,17 @@
+<h1>Welcome</h1>
+<h2>There and Back Again</h2>
+<h3>a mood tracking journal adventure</h3>
+<h4>Sign Up Below</h4>
+
+<%= form_tag("/users", method: "post") do %>
+  <%= label_tag(:name) %>
+  <%= text_field_tag(:name) %>
+  <%= label_tag(:email) %>
+  <%= text_field_tag(:email) %>
+  <%= label_tag(:password) %>
+  <%= password_field_tag(:password) %>
+  <%= label_tag(:password_confirmation) %>
+  <%= password_field_tag(:password_confirmation) %>
+
+  <%= submit_tag("Sign Up") %>
+<% end %>
