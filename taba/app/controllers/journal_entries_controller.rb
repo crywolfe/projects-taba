@@ -24,6 +24,7 @@ class JournalEntriesController < ApplicationController
 	end
 
 	def show
+		@user = User.find_by(id: params[:id])
 		@journal_entry = JournalEntry.find_by(id: params[:id])
 	
 	end
