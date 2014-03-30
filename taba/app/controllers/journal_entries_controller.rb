@@ -16,7 +16,7 @@ class JournalEntriesController < ApplicationController
 			)
 #if validations pass save and redirect... if not render new with error.
 		if @journal_entry.save
-			redirect_to(journal_entries_path)
+			redirect_to(user_journal_entries_path)
     else
     	# flash[:error] = "You made an error."
       render :new

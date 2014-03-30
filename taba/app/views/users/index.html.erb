@@ -13,8 +13,11 @@
 <%= link_to "Home", root_path %>
 
 	<ul>
-		<p><%= link_to("Write", new_journal_entry_path) %> a Journal Entry</p>
-		<p><%= link_to("View", journal_entries_path)%> your Journal Entries</p>
+
+		<p><a href="/users/<%= current_user.id %>/journal_entries/new">Write </a> a Journal Entry</p>
+
+
+		<p><a href="/users/<%= current_user.id %>/journal_entries">View </a> Your Journal Entries</p>
 
 
 		<p>View your Mood History</p>
