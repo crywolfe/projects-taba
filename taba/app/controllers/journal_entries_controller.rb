@@ -14,10 +14,11 @@ class JournalEntriesController < ApplicationController
 		@journal_entry = JournalEntry.create(
 			:body => params[:body]
 			)
-
+#if validations pass save and redirect... if not render new with error.
 		if @journal_entry.save
 			redirect_to(journal_entries_path)
     else
+    	# flash[:error] = "You made an error."
       render :new
     end
 	end

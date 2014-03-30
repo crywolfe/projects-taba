@@ -14,7 +14,6 @@ class UsersController < ApplicationController
 #make create post route
 	def create
 		#create new_user variable using User.new (not user create)... to ensure a save based on validations
-		binding.pry
 		@new_user = User.new(
 			:name => params[:name],
       :email => params[:email],
@@ -26,8 +25,8 @@ class UsersController < ApplicationController
 			redirect_to(root_path)
 
 		else
-			flash[:error] = "You made an error."
-			flash[:error] = #new_user.errors.messages
+			# flash[:error] = "You made an error (user controller)."
+			# flash[:error] = #new_user.errors.messages
 			render :new
 			#there is another command here I can use...
 		end

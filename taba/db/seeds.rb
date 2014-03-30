@@ -10,6 +10,16 @@ new_user = User.create(
 	name: "Gerald",
 	email: "gwolfe2007@gmail.com",
 	password: "12345678",
-	password_confirmation: "12345678"
+	password_confirmation: "12345678",
+	admin: "t"
+
+	)
+
+new_user2 = User.create(
+	name: "John",
+	email: "john@gmail.com",
+	password: "12345678",
+	password_confirmation: "12345678",
+	admin: "t"
 
 	)
