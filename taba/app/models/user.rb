@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 	#call bcrypt gem method has_secure_password
+	#without validations false, users cannot be created
 	has_secure_password validations: false
 	validates :password, presence: true
 
