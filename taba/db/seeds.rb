@@ -24,4 +24,11 @@ new_user2 = User.create(
 	)
 
 new_journal_entry = JournalEntry.create(
-	body: "I had such a wonderful time today!  LOL alot.  Great conversation with my wife.  I spent my whole day programming.\n  My lunch was ok... but dinner at Chipotle was +1!")
+	body: "I had such a wonderful time today!  LOL alot.  Great conversation with my wife.  I spent my whole day programming.\n  My lunch was ok... but dinner at Chipotle was +1!",
+	user_id: "1"
+	)
+
+new_journal_entry2 = JournalEntry.create(
+	body: "My day was awful.  It rained, rained and rained.\n  :(  \n What am I going to do?\n  Dinner was even worse!",
+	user_id: "2"
+	)

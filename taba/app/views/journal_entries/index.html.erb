@@ -7,12 +7,16 @@
 <h3>Writing in a journal is a good habit to have.</h3>
 
 <!-- list each entry -->
-<% @journal_entries.reverse.each do |entry| %>
+<% @journal_entries.each do |entry| %>
 <!-- parse the date to obtain the date and day of week -->
 	<% unparsed_date = entry.created_at %>
 	<% parsed_date = unparsed_date.strftime("%m - %d - %y - %A") %>
-	Entry No. <%= entry.id %> -->
- 	<a href="/users/<%= current_user.id %>/journal_entries/<%= entry.id %>"><%= parsed_date %></a><br>
+
+<!-- Using Entry ID just to keep track of the journal id.  Will need to get rid of it in final implementation.
+ -->	<% if current_user.id == entry.user_id %>
+		Entry No. <%= entry.id %> -->
+ 		<a href="/users/<%= current_user.id %>/journal_entries/<%= entry.id %>"><%= parsed_date %></a><br>
+	<% end %>
 
 <% end %>
 

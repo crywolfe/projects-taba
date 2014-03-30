@@ -2,6 +2,7 @@ class JournalEntriesController < ApplicationController
 
 	def index
 		@journal_entries = JournalEntry.all
+	
 	end
 
 	def new
@@ -12,7 +13,8 @@ class JournalEntriesController < ApplicationController
 	def create
 		#assign to variable journal_entry a create to post.
 		@journal_entry = JournalEntry.create(
-			:body => params[:body]
+			:body => params[:body],
+			:user_id => current_user.id
 			)
 #if validations pass save and redirect... if not render new with error.
 		if @journal_entry.save
@@ -24,9 +26,9 @@ class JournalEntriesController < ApplicationController
 	end
 
 	def show
-		@user = User.find_by(id: params[:id])
+
 		@journal_entry = JournalEntry.find_by(id: params[:id])
-	
+
 	end
 
 ### I attempted to use strong params but I couldn't figure out the proper syntax.
