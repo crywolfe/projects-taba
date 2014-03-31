@@ -37,21 +37,22 @@ class SamplePhrase < ActiveRecord::Base
 
 	def self.extract(journal_entry)
 		#start with ! as one of many punctuations
-		# journal_entry = "What a great day! I had a great time! Simply wonderful!"
 		delimiter = "! ? "
+		#split on the delimiter
 		phrase = journal_entry.split(delimiter)
+		# handle phrase if array elements are greater than one
 		if phrase.size > 1
 			phrase.each do |n|
 				phrase[phrase.index(n)] += "!"
 			end
 
+			# take out the additional delimiter on the last array element.
 			phrase_chars = phrase[-1].chars
 			phrase_chars.pop
 			rejoined_phrase = phrase_chars.join
 			phrase[-1] = rejoined_phrase
-
 		end
-\
+
 
 		phrase
 
