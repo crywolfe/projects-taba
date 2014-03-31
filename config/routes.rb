@@ -11,6 +11,9 @@ Taba::Application.routes.draw do
   
   resources :sample_phrases
 
+#need to see if moods should be nested
+  resources :moods
+
   get '/session/new' => 'session#new'
   post '/session' => 'session#create'
   get  '/logout' => 'session#destroy'

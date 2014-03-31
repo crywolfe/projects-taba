@@ -34,8 +34,8 @@ describe SamplePhrase do
 
 	# two sentences with two punctuations
 	it "should return a 2 element array from a two sentence string with two punctuations" do
-		input = "What a great day! I had a great time."
-		output = ["What a great day!", "I had a great time."]
+		input = "What a great day? Did I have a great time!"
+		output = ["What a great day?", "Did I have a great time!"]
 
 		expect(SamplePhrase.extract(input)).to eq(output)
 	end

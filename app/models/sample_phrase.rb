@@ -11,6 +11,7 @@
 
 class SamplePhrase < ActiveRecord::Base
 	belongs_to :journal_entry
+	belongs_to :mood
 
 # 	def fake_method
 # # define and initialize empty array
@@ -36,8 +37,11 @@ class SamplePhrase < ActiveRecord::Base
 	# end
 
 	def self.extract(journal_entry)
+
+		#WILL DEFINITELY NEED TO REFACTOR THIS...
+
 		#start with ! as one of many punctuations
-		delimiter = "! ? "
+		delimiter = "! "
 		#split on the delimiter
 		phrase = journal_entry.split(delimiter)
 		# handle phrase if array elements are greater than one
@@ -53,9 +57,8 @@ class SamplePhrase < ActiveRecord::Base
 			phrase[-1] = rejoined_phrase
 		end
 
-
+		#return array of phrases on method call
 		phrase
-
 	end
 
 	
