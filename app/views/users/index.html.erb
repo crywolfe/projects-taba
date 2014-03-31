@@ -1,4 +1,6 @@
 <h2>There and Back Again</h2>
+<h3>a mood tracking journal adventure</h3>
+
 <% if logged_in? %>
 
 	<h3>Hello <%= current_user.name %> </h3>
@@ -19,9 +21,16 @@
 
 		<p><a href="/users/<%= current_user.id %>/journal_entries">View </a> Your Journal Entries</p>
 
+		<h4>Mood Options</h4>
+
+		<ul>
+		<p>View Your Mood List</p>
+
+
 		<p>Add Moods to Your Mood List</p>
 
 		<p>View your Mood History</p>
+		</ul>
 	</ul>
 
 	<p>

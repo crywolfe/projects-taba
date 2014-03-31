@@ -1,4 +1,8 @@
 <%= link_to("Home", root_path) %>
+
+<h2>There and Back Again</h2>
+<h3>a mood tracking journal adventure</h3>
+
 <h3>Hello <%= current_user.name %> </h3>
 <h4> <%= link_to("add", new_user_journal_entry_path) %> a journal entry </h4>
 <h4> <%= link_to("list", user_journal_entries_path) %> all journal entries </h4>
@@ -8,5 +12,9 @@
 <p><b><%= @journal_entry.body %></b></p>
 
 <p>---------------</p>
-<h4> <%= link_to("extract", sample_phrases_path) %> sample phrases from this journal entry.</h4>
+<h4> Extract sample phrases from this journal entry.  
+<button type="button"><a href="/sample_phrases">Extract</a></button>
+
+</h4>
+
 
