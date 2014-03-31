@@ -19,9 +19,17 @@ class SamplePhrase < ActiveRecord::Base
 		phrase_array = []
 		# bring in 'journal entry body' string
 		# split on .!? and \n
-		journal_entry.split(/. ! ? \n /)
+		# journal_entry.split(/. ! ? \n /)
 
-		# push into array
+		phrase_chars = journal_entry[:body](reg ex /  /)
+		phrase_chars.each do |char|
+			phrase_hash = {
+				phrase: char.split(reg ex / /),
+			}
+		# push hash into array
+
+		phrase_array << phrase_hash
+
 		# now go to views
 		# iterate over each element
 		# render on view
