@@ -17,6 +17,7 @@ Taba::Application.routes.draw do
   get '/session/new' => 'session#new'
   post '/session' => 'session#create'
   get  '/logout' => 'session#destroy'
+  get '/redirect_url' => 'session#oauth'
 
 
 

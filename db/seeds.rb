@@ -32,3 +32,18 @@ new_journal_entry2 = JournalEntry.create(
 	body: "My day was awful.  It rained, rained and rained.\n  :(  \n What am I going to do?\n  Dinner was even worse!",
 	user_id: "2"
 	)
+
+###  Seed Moods Table with lots of data ###
+
+mood_array = ["Aggravated",
+	"Alone",
+	"Amused",
+	"Angry",
+	"Annoyed"]
+
+seeds_array.each do |seed|
+	Mood.create(
+		name: seed
+		)
+
+
