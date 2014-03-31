@@ -1,11 +1,15 @@
-index.html.erb
+<h2>Mood List</h2>
+
+<ul>
+	<% @moods.each do |mood| %>
+		<li>
+			<%= mood.name %><br>
+		</li>
+
+	<% end %>
+
+</ul>
+
+<h3>Add to Your List of Moods</h3>
 
 
-
-MOODS
-
-<a href="https://accounts.google.com/o/oauth2/auth?
- scope=https://www.googleapis.com/auth/devstorage.read_write&
- redirect_uri=<%=ENV['GOOGLE_REDIRECT_URIS']%>&
- response_type=code&
- client_id=<%=ENV['GOOGLE_CLIENT_ID']%>">GENERATE OAUTH</a>

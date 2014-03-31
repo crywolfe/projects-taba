@@ -35,15 +35,16 @@ new_journal_entry2 = JournalEntry.create(
 
 ###  Seed Moods Table with lots of data ###
 
-mood_array = ["Aggravated",
+moods_array = ["Aggravated",
 	"Alone",
 	"Amused",
 	"Angry",
 	"Annoyed"]
 
-seeds_array.each do |seed|
+moods_array.each do |mood|
 	Mood.create(
-		name: seed
+		name: mood
 		)
+end
 
 
