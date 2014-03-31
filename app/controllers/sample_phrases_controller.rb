@@ -10,6 +10,8 @@ class SamplePhrasesController < ApplicationController
 	end
 
 	def create
+
+		
 	end
 
 	def show
