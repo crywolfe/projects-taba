@@ -14,9 +14,15 @@ class SamplePhrase < ActiveRecord::Base
 
 
 	def self.extract(journal_entry)
+		delimiter = "! "
+		journal_entry_split = journal_entry.split(delimiter)
+		if journal_entry_split.size > 1
+			journal_entry_split[0] += "!"
 
+		end
 
-		[journal_entry]
+		journal_entry_split
+
 
 		# define and initialize empty array
 	

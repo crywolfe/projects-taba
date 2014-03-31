@@ -7,9 +7,14 @@ describe SamplePhrase do
 		output = [input]
 
 		expect(SamplePhrase.extract(input)).to eq(output)
-
-
 	end
 
+
+	it "should return a 2 element array from a two sentence string" do
+		input = "What a great day! I had a great time"
+		output = ["What a great day!", "I had a great time"]
+
+		expect(SamplePhrase.extract(input)).to eq(output)
+	end
 
 end
