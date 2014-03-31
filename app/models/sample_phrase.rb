@@ -12,25 +12,52 @@
 class SamplePhrase < ActiveRecord::Base
 	belongs_to :journal_entry
 
+# 	def fake_method
+# # define and initialize empty array
+# 		phrase_array = []
+# 		# bring in 'journal entry body' string
+# 		# split on .!? and \n
+# 		# journal_entry.split(/. ! ? \n /)
+
+# 		phrase_chars = journal_entry[:body](reg ex /  /)
+# 		phrase_chars.each do |char|
+# 			phrase_hash = {
+# 				phrase: char.split(reg ex / /),
+# 			}
+# 		# push hash into array
+
+# 		phrase_array << phrase_hash
+
+# 		# now go to views
+# 		# iterate over each element
+# 		# render on view
+# 	end
+
+	# end
 
 	def self.extract(journal_entry)
-		delimiter = "! "
-		journal_entry_split = journal_entry.split(delimiter)
-		if journal_entry_split.size > 1
-			journal_entry_split[0] += "!"
+		#start with ! as one of many punctuations
+		# journal_entry = "What a great day! I had a great time! Simply wonderful!"
+		delimiter = "! ? "
+		phrase = journal_entry.split(delimiter)
+		if phrase.size > 1
+			phrase.each do |n|
+				phrase[phrase.index(n)] += "!"
+			end
+
+			phrase_chars = phrase[-1].chars
+			phrase_chars.pop
+			rejoined_phrase = phrase_chars.join
+			phrase[-1] = rejoined_phrase
 
 		end
+\
 
-		journal_entry_split
-
-
-		# define and initialize empty array
-	
-		# now go to views
-		# iterate over each element
-		# render on view
+		phrase
 
 	end
+
+	
 
 
 
