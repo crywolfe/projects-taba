@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  email           :string(255)
+#  password_digest :string(255)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  admin           :boolean          default(FALSE)
+#
+
 class User < ActiveRecord::Base
 	#call bcrypt gem method has_secure_password
 	#without validations false, users cannot be created

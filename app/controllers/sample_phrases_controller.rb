@@ -5,13 +5,12 @@ class SamplePhrasesController < ApplicationController
 
 	end
 
-
 	def new
 	end
 
 	def create
 
-		
+
 	end
 
 	def show

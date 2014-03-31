@@ -55,6 +55,8 @@ group :test do
   gem 'shoulda-matchers'
 end
 
+gem 'annotate'
+
 group :development do
 	gem 'rails-erd'
 end
