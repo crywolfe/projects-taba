@@ -4,8 +4,8 @@
 
 <h3> <%= link_to("Add", new_user_journal_entry_path) %> a journal entry </h3>
 
-<h3>Thank you for your writing in your journal.</h3>
-<h3>Writing in a journal is a good habit to have.</h3>
+<h4>Thank you for your writing in your journal.</h4>
+<h4>Writing in a journal is a good habit to have.</h4>
 
 <!-- list each entry -->
 <% @journal_entries.each do |entry| %>
@@ -17,6 +17,7 @@
  -->	<% if current_user.id == entry.user_id %>
 		Entry No. <%= entry.id %> -->
  		<a href="/users/<%= current_user.id %>/journal_entries/<%= entry.id %>"><%= parsed_date %></a><br>
+ 		<!-- could i also use journal_entries.where("column = 'XXXX'")??? -->
 	<% end %>
 
 <% end %>
