@@ -1,14 +1,12 @@
 <h2>Mood List</h2>
 
-<ul>
-	<% @moods.each do |mood| %>
-		<li>
-			<%= mood.name %><br>
-		</li>
+<select>
+		<% @moods.each do |mood| %>
+			<option value="#{mood.name}"><%= mood.name %></option>
+		<% end %>
 
-	<% end %>
-
-</ul>
+	</ul>	
+</select>
 
 <h3>Add to Your List of Moods</h3>
 
