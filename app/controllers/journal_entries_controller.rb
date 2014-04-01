@@ -29,6 +29,7 @@ class JournalEntriesController < ApplicationController
 
 		@journal_entry = JournalEntry.find_by(id: params[:id])
 
+
 	end
 
 ### I attempted to use strong params but I couldn't figure out the proper syntax.

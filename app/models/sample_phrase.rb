@@ -36,9 +36,7 @@ class SamplePhrase < ActiveRecord::Base
 
 	# end
 
-	def self.extract(journal_entry)
-
-		#WILL DEFINITELY NEED TO REFACTOR THIS...
+	def extract(journal_entry)
 		# journal_entry = "This is a sentence.  I am feeling great!  What do you think?  Yeah :)  Next time."
 		#start with ! as one of many punctuations
 		delimiter = /(\. |\.|! |\? |\...)/
@@ -64,6 +62,4 @@ class SamplePhrase < ActiveRecord::Base
 		#return array of phrases on method call
 		phrase
 	end
-
-
 end

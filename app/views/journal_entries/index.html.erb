@@ -17,6 +17,7 @@
  -->	<% if current_user.id == entry.user_id %>
 		Entry No. <%= entry.id %> -->
  		<a href="/users/<%= current_user.id %>/journal_entries/<%= entry.id %>"><%= parsed_date %></a><br>
+ 		<!-- link_to "DATE", user_journal_entry_path(current_user, entry) -->
  		<!-- could i also use journal_entries.where("column = 'XXXX'")??? -->
 	<% end %>
 
