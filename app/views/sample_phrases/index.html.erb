@@ -18,11 +18,25 @@
 <tbody>
 	<tr>
 		<td>What a great day!!</td>
-		<td>happy</td>
+		<td>
+			<select>
+				<% @moods.each do |mood| %>
+					<option value="#{mood.name}"><%= mood.name %></option>
+				<% end %>
+			</select>
+
+		</td>
+
 	</tr>
 	<tr>
 		<td>Fun Dinner!</td>
-		<td>fun</td>
+		<td>
+			<select>	
+				<% @moods.each do |mood| %>
+					<option value="#{mood.name}"><%= mood.name %></option>
+				<% end %>
+			</select>
+		</td>
 	</tr>
 </tbody>
 
