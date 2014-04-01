@@ -34,25 +34,17 @@ class JournalEntry < ActiveRecord::Base
 		# handle phrase if array elements are greater than one
 		if phrase.size > 1
 			phrase.map do |n|
+				# exit if n is equal to phrase.last
 				if phrase.last == n
 					break
 				end
-				# if n.index(phrase[-1])+1 == nill
-				# end
 				# TODO: use each_with_index which takes two block args ||
 				#need length limitation
-				# s = phrase.index(n) + 1
-				# TODO: exit if n is equal to phrase.length
 				phrase[phrase.index(n)] << phrase[phrase.index(n)+1]
 				phrase.slice!(phrase.index(n)+1)
-				# phrase[phrase.index(n)] += delimiter
-
-
 			end
-			#return array of phrases on method call
 		end
+		#return the phrase array
 		phrase
-
 	end
-
 end
