@@ -6,10 +6,11 @@ Taba::Application.routes.draw do
   root 'welcome#index'
 
   resources :users do
-    resources :journal_entries
+    resources :journal_entries do
+      resource :sample_phrases
+    end
   end
   
-  resources :sample_phrases
 
 #need to see if moods should be nested
   resources :moods

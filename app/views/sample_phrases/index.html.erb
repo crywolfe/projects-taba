@@ -1,8 +1,12 @@
-<!-- This is where I need to handle my iteration of phrase_array. -->
 <%= render "/heading" %>
 
+<h3>Hello <%= current_user.name %> </h3>
+<h4>This is your sample phrase and mood submission page.</h4>
+<p>Just assign a mood to each sample phrase taken from your journal, click "Submit" at the bottom and the app will do the rest.</p>
+
+
 <table border=1 cellpadding=5>
-	<caption>Sample Phrase and Mood Table </caption>
+	<caption><b>Sample Phrase and Mood Table</b> </caption>
 	<thead>
 		<tr>
 			<th>Sample Phrase</th>
@@ -27,5 +31,7 @@
 </tbody>
 
 </table>
+
+<h4> <button type="button"><a href="">Submit</a></button> to the Predictions Engine.  </h4>
 
 
