@@ -3,7 +3,6 @@ class SamplePhrasesController < ApplicationController
 	def index
 		@sample_phrases = SamplePhrase.all
 		@moods = Mood.all
-		binding.pry
 
 	end
 

@@ -13,6 +13,9 @@ class JournalEntry < ActiveRecord::Base
 	belongs_to :user
 	has_many :sample_phrases
 
+
+
+
 	#create method to separate date from time
 	# def separate_date_from_time
 	# 	@journal_entry = JournalEntry.find_by
@@ -26,25 +29,38 @@ class JournalEntry < ActiveRecord::Base
 	# end
 	def extract
 
-		# journal_entry = "This is a sentence.  I am feeling great!  What do you think?  Yeah :)  Next time."
-		#start with ! as one of many punctuations
+		# use delimiter to set reg ex to split on... continue to add to this.
 		delimiter = /(\. |\.|! |\? |\.\.\.)/
 		#split on the delimiter
 		phrase = body.split(delimiter)
+
 		# handle phrase if array elements are greater than one
 		if phrase.size > 1
 			phrase.map do |n|
 				# exit if n is equal to phrase.last
 				if phrase.last == n
 					break
-				end
+				end #if
 				# TODO: use each_with_index which takes two block args ||
 				#need length limitation
 				phrase[phrase.index(n)] << phrase[phrase.index(n)+1]
 				phrase.slice!(phrase.index(n)+1)
-			end
-		end
-		#return the phrase array
+
+			end #phrase.map do
+		end #if phrase
+			#return the phrase array
 		phrase
+
+		#take each element of the phrase array and enter it into the SamplePhrase table
+		## NOTE:  DO I NEED THIS???  NOT SURE I NEED TO PERSIST THIS DATA... I JUST NEED TO CREATE A CSV FILE... ALTHOUGH PERSISTING THE DATA WOULD BE HELPFUL TO HAVE FOR EACH USER... THIS MEANS I NEED TO NEST ROUTE IT...
+		# phrase.each do |n|
+		# 	SamplePhrase.create(:phrase => n)
+		# end
+
+		#take the phrase array and output it to a csv file.
+		CSV.open("sample_phrases.csv", "wb") do |csv|
+			csv << phrase
+		end
+
 	end
 end
