@@ -24,7 +24,7 @@ new_user2 = User.create(
 	)
 
 new_journal_entry = JournalEntry.create(
-	body: "I had such a wonderful time today!  LOL alot.  Great conversation with my wife.  I spent my whole day programming.\n  My lunch was ok... but dinner at Chipotle was +1!.  Overall, today was above average.  The weather was decent.  I went to the top of a building to look at the view.  Wow!  The Empire State Building is quite fantastic.",
+	body: "I had such a wonderful time today!  LOL alot.  Great conversation with my wife.  I spent my whole day programming.\n  My lunch was ok, but dinner at Chipotle was +1!  Overall, today was above average.  The weather was decent.  I went to the top of a building to look at the view.  Wow!  The Empire State Building is quite fantastic.  I Love NYC!  Who wouldn't?  Great workout today too.",
 	user_id: "1"
 	)
 
@@ -40,6 +40,7 @@ moods_array = ["","Aggravated",
 	"Amused",
 	"Angry",
 	"Annoyed",
+	"Excited",
 	"Happy"]
 
 moods_array.each do |mood|

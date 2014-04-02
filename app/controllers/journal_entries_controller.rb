@@ -28,6 +28,8 @@ class JournalEntriesController < ApplicationController
 	def show
 
 		@journal_entry = JournalEntry.find_by(id: params[:id])
+		binding.pry
+		@journal_entry.extract
 
 	end
 

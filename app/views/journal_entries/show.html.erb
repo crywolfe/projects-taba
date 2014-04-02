@@ -6,11 +6,13 @@
 
 <!-- need to clean up the date -->
 <p>Your journal entry for <%= @journal_entry.created_at%> is below</p>
+<p>---------------</p>
+
 <p><b><%= @journal_entry.body %></b></p>
 
 <p>---------------</p>
-<h4> Extract sample phrases from this journal entry.  
-<button type="button"><% @journal_entry.extract %>Extract</a></button>
+<h4> <button type="button"><a href="/users/<%= current_user.id %>/journal_entries/<%= @journal_entry.id %>">Extract</a></button> sample phrases from this journal entry.  
+
 
 </h4>
 

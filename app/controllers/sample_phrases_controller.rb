@@ -11,7 +11,6 @@ class SamplePhrasesController < ApplicationController
 
 	def create
 
-
 	end
 
 	def show

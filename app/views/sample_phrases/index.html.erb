@@ -10,9 +10,6 @@
 		</tr>
 	</thead>
 
-
-
-
 <tbody>
 	<% @sample_phrases.each do |sample_phrase| %>
 	<tr>
@@ -22,24 +19,11 @@
 				<% @moods.each do |mood| %>
 					<option value="#{mood.name}"><%= mood.name %></option>
 				<% end %>
-
 			</select>
-
 		</td>
-
 	</tr>
 	<% end %>
 
-	<tr>
-		<td>Fun Dinner!</td>
-		<td>
-			<select>	
-				<% @moods.each do |mood| %>
-					<option value="#{mood.name}"><%= mood.name %></option>
-				<% end %>
-			</select>
-		</td>
-	</tr>
 </tbody>
 
 </table>
