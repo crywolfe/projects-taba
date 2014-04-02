@@ -13,9 +13,6 @@ class JournalEntry < ActiveRecord::Base
 	belongs_to :user
 	has_many :sample_phrases
 
-
-
-
 	#create method to separate date from time
 	# def separate_date_from_time
 	# 	@journal_entry = JournalEntry.find_by

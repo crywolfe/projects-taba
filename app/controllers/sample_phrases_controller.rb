@@ -14,6 +14,8 @@ class SamplePhrasesController < ApplicationController
 	end
 
 	def show
+		@sample_phrases = SamplePhrase.all
+		@moods = Mood.all
 	end
 
 	def edit

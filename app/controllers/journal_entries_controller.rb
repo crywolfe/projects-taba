@@ -29,7 +29,10 @@ class JournalEntriesController < ApplicationController
 
 		@journal_entry = JournalEntry.find_by(id: params[:id])
 		@journal_entry.extract
-		redirect_to(sample_phrases_path)
+		redirect_to(user_journal_entry_sample_phrases_path(current_user, @journal_entry))
+		# OR
+		# redirect_to("/users/:user_id/journal_entries/:journal_entry_id/sample_phrases")
+
 
 	end
 
