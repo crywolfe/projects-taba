@@ -51,7 +51,9 @@ class JournalEntry < ActiveRecord::Base
 		#take each element of the phrase array and enter it into the SamplePhrase table
 		## NOTE:  DO I NEED THIS???  NOT SURE I NEED TO PERSIST THIS DATA... I JUST NEED TO CREATE A CSV FILE... ALTHOUGH PERSISTING THE DATA WOULD BE HELPFUL TO HAVE FOR EACH USER... THIS MEANS I NEED TO NEST ROUTE IT...
 		phrase.each do |n|
-			SamplePhrase.create(:phrase => n)
+			sample = SamplePhrase.create(:phrase => n)
+			self.sample_phrases << sample
+
 		end
 
 		#take the phrase array and output it to a csv file.

@@ -29,9 +29,15 @@ class JournalEntriesController < ApplicationController
 
 		@journal_entry = JournalEntry.find_by(id: params[:id])
 		@journal_entry.extract
-		redirect_to(user_journal_entry_sample_phrases_path(current_user, @journal_entry))
+		# redirect_to(user_journal_entry_sample_phrases_path([current_user, @journal_entry]))
+
+		#need object for user and 
 		# OR
-		# redirect_to("/users/:user_id/journal_entries/:journal_entry_id/sample_phrases")
+		# redirect_to([:show, current_user, @journal_entry])
+		# redirect_to("/users/<%= current_user.id %>/journal_entries/<%= @journal_entry.id %>/sample_phrases")
+		@sample_phrases = SamplePhrase.all
+		@moods = Mood.all
+		render "sample_phrases/show"
 
 
 	end
