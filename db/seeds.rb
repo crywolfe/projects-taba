@@ -24,12 +24,12 @@ new_user2 = User.create(
 	)
 
 new_journal_entry = JournalEntry.create(
-	body: "I had such a wonderful time today!  LOL alot.  Great conversation with my wife.  I spent my whole day programming.\n  My lunch was ok... but dinner at Chipotle was +1!",
+	body: "I had such a wonderful time today!  LOL alot.  Great conversation with my wife.  I spent my whole day programming.\n  My lunch was ok... but dinner at Chipotle was +1!.  Overall, today was above average.  The weather was decent.  I went to the top of a building to look at the view.  Wow!  The Empire State Building is quite fantastic.",
 	user_id: "1"
 	)
 
 new_journal_entry2 = JournalEntry.create(
-	body: "My day was awful.  It rained, rained and rained.\n  :(  \n What am I going to do?\n  Dinner was even worse!",
+	body: "My day was awful.  It rained, rained and rained.\n  :(  \n What am I going to do?  Dinner was even worse!  The only saving grace was watching the Flatiron building.  So many people don't realize the significance of this building.  Just love it!  What would I rather have good weather and no Flatiron... or inclement weather and Flatiron?",
 	user_id: "2"
 	)
 
