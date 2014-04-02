@@ -45,7 +45,11 @@ moods_array = ["","Aggravated",
 	"Angry",
 	"Annoyed",
 	"Excited",
-	"Happy"]
+	"Happy",
+	"Relaxed",
+	"Rejuvenated",
+	"Surprised",
+	"Thankful"]
 
 moods_array.each do |mood|
 	Mood.create(
