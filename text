@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20140402025123_change_datatype_on_body_attribue_on_table_journal_entries.rb

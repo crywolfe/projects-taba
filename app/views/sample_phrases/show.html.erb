@@ -1,0 +1,43 @@
+show.html.erb page <br>
+<%= render "/heading" %>
+
+<h3>Hello <%= current_user.name %> </h3>
+<h4>This is your sample phrase and mood submission page.</h4>
+<p>Just assign a mood to each sample phrase taken from your journal, click "Submit" at the bottom and the app will do the rest.</p>
+
+
+<table border=1 cellpadding=5>
+	<caption><b>Sample Phrase and Mood Table</b> </caption>
+	<thead>
+		<tr>
+			<th>Sample Phrase</th>
+			<th>Mood</th>
+		</tr>
+	</thead>
+
+<tbody>
+	<% @sample_phrases.each do |sample_phrase| %>
+
+		<% if sample_phrase.journal_entry_id == @journal_entry.id %>
+			<tr>
+				<td>
+					<%= sample_phrase.phrase %>
+				</td>
+				<td>
+					<select>
+						<% @moods.each do |mood| %>
+							<option value="#{mood.name}"><%= mood.name %></option>
+						<% end %>
+					</select>
+				</td>
+			</tr>
+		<% end %>
+	<% end %>
+
+</tbody>
+
+</table>
+
+<h4> <button type="button"><a href="">Submit</a></button> to the Predictions Engine.  </h4>
+
+
