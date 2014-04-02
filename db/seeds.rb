@@ -33,6 +33,10 @@ new_journal_entry2 = JournalEntry.create(
 	user_id: "2"
 	)
 
+new_journal_entry3 = JournalEntry.create(
+	body: "Cool.  Cool!  COOL!  That is all I can say about today.",
+	user_id: "1"
+	)
 ###  Seed Moods Table with lots of data ###
 
 moods_array = ["","Aggravated",

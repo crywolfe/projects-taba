@@ -10,13 +10,14 @@ class SamplePhrasesController < ApplicationController
 	end
 
 	def create
-		
+
 
 	end
 
 	def show
-		@sample_phrases = SamplePhrase.all
+		@sample_phrases = JournalEntry.SamplePhrase.all
 		@moods = Mood.all
+		@sample_phrase
 	end
 
 	def edit
