@@ -16,50 +16,53 @@ class JournalEntry < ActiveRecord::Base
 	#create method to separate date from time
 	# def separate_date_from_time
 	# 	@journal_entry = JournalEntry.find_by
-
 	# 	require "date"
-
 	# 	unparsed_date = @journal_entries.created_at
 	# 	parsed_date = unparsed_date.strftime("%A %m/%d %y")
 	# 	return parsed_date
 
 	# end
 	def extract
+			sentences = extract_sentences()
+			create_sample_phrases(sentences)
+			create_csv(sentences)
+	end
 
+	def extract_sentences
 		# use delimiter to set reg ex to split on... continue to add to this.
-		delimiter = /(\. |\.|! |\? |\.\.\.)/
-		#split on the delimiter
-		phrase = body.split(delimiter)
+		delimiter = /(\! |\? |(\.\.\.)|\. )/
+		#split the journal entry body string on the delimiter
+		phrases = body.split(delimiter)
 
 		# handle phrase if array elements are greater than one
-		if phrase.size > 1
-			phrase.map do |n|
+		if phrases.size > 1
+			phrases.map do |n|
 				# exit if n is equal to phrase.last
-				if phrase.last == n
+				if phrases.last == n
 					break
 				end #if
 				# TODO: use each_with_index which takes two block args ||
-				#need length limitation
-				phrase[phrase.index(n)] << phrase[phrase.index(n)+1]
-				phrase.slice!(phrase.index(n)+1)
+				phrases[phrases.index(n)] << phrases[phrases.index(n)+1]
+				phrases.slice!(phrases.index(n)+1)
 
 			end #phrase.map do
 		end #if phrase
-			#return the phrase array
-		phrase
 
+		return phrases
+	end
+
+	def create_sample_phrases(phrases)
 		#take each element of the phrase array and enter it into the SamplePhrase table
-		## NOTE:  DO I NEED THIS???  NOT SURE I NEED TO PERSIST THIS DATA... I JUST NEED TO CREATE A CSV FILE... ALTHOUGH PERSISTING THE DATA WOULD BE HELPFUL TO HAVE FOR EACH USER... THIS MEANS I NEED TO NEST ROUTE IT...
-		phrase.each do |n|
-			sample = SamplePhrase.create(:phrase => n)
+		phrases.each do |phrase|
+			sample = SamplePhrase.create(:phrase => phrase)
 			self.sample_phrases << sample
-
 		end
+	end
 
+	def create_csv(phrases)
 		#take the phrase array and output it to a csv file.
 		CSV.open("sample_phrases.csv", "wb") do |csv|
-			csv << phrase
+			csv << phrases
 		end
-
 	end
 end
