@@ -1,0 +1,7 @@
+
+<select>
+		<% @moods.each do |mood| %>
+			<option value="#{mood.name}"><%= mood.name %></option>
+		<% end %>
+	</ul>	
+</select>

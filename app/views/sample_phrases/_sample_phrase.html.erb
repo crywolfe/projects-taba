@@ -1,0 +1,21 @@
+<table border=1 cellpadding=5>
+	<h2>Sample Phrase and Mood Table</h2>
+	<thead>
+		<tr>
+			<th>Sample Phrase</th>
+			<th>Mood</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= sample_phrase.phrase %></td>
+			<td>
+				<select>
+					<% @moods.each do |mood| %>
+						<option value="#{mood.name}"><%= mood.name %></option>
+					<% end %>
+				</select>
+			</td>
+		</tr>
+	</tbody>
+</table>
