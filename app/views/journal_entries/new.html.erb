@@ -4,19 +4,21 @@
 
 <h3>
 	The current date is <%= Date.today.month %>-<%= Date.today.day %>-<%= Date.today.year %>.
-<h4>Pull the lower right hand corner of the post window to expand it.</h4>
+<h4>Pull the lower right hand corner of the post window to expand it.
 
-<%= form_tag("/users/#{current_user.id}/journal_entries", method: "POST") do %>
-  <%= label_tag(:Entry) %><br>
+	<%= form_tag("/users/#{current_user.id}/journal_entries", method: "POST") do %>
+		<br>
+	  <%= label_tag(:Journal_Entry) %><br>
 
-  <%= text_area_tag(:body) %>
-  <br>
+	  <%= text_area_tag(:body) %>
+	  <br>
 
-  <%= submit_tag("Submit Your Journal Entry") %>
-<% end %>
+	  <%= submit_tag("Submit Your Journal Entry") %>
+	<% end %>
 
-<br>
-<br>
+	<br>
+	<br>
+</h4>
 Need to have new buttons for TABA recommendations based on mood
 <br>
 After submission, need to show a button for mood

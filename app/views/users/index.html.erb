@@ -5,7 +5,6 @@
 	<% if logged_in? %>
 
 		<h3>Hello <%= current_user.name %> </h3>
-		<h3>Welcome to your mood tracking journal.</h3>
 		<h3>Can't wait to hear about your adventure today!</h3>
 	<% if current_user.admin %>
 		<p>
@@ -19,13 +18,11 @@
 
 			<p><a href="/users/<%= current_user.id %>/journal_entries/new">Write </a> a Journal Entry</p>
 
-
 			<p><a href="/users/<%= current_user.id %>/journal_entries">View </a> Your Journal Entries</p>
 
 			<h4>Mood Options</h4>
-
 			<ul>
-			<p><a href="/moods">View</a> All Moods</p>
+			<p><a href="/moods">View</a> Available Moods</p>
 
 
 			<p>Add Moods to Your Mood List</p>
@@ -34,12 +31,11 @@
 			</ul>
 		</ul>
 
-	<a href="https://accounts.google.com/o/oauth2/auth?scope=https://www.googleapis.com/auth/devstorage.read_write&redirect_uri=<%=ENV['GOOGLE_REDIRECT_URIS']%>&response_type=code&client_id=<%=ENV['GOOGLE_CLIENT_ID']%>">GENERATE OAUTH</a>
+			<a href=<%= oauth %>>GENERATE OAUTH</a>	
+	
 		<p>
 		    <a href="/logout"> Logout</a>
 		</p>
-
-		
 
 	<% end %>
 </div>
