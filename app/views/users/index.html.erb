@@ -12,7 +12,7 @@
 		</p>
 
 	<% end %>
-	<%= link_to "Home", root_path %>
+	<%= link_to 'Home', root_path %>
 
 		<ul>
 
@@ -34,7 +34,7 @@
 			<a href=<%= oauth %>>GENERATE OAUTH</a>	
 	
 		<p>
-		    <a href="/logout"> Logout</a>
+      <%= link_to('Logout_user'.titleize, logout_path) %>
 		</p>
 
 	<% end %>
