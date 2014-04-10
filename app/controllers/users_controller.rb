@@ -25,8 +25,7 @@ class UsersController < ApplicationController
 			redirect_to(root_path)
 
 		else
-			# flash[:error] = "You made an error (user controller)."
-			# flash[:error] = #new_user.errors.messages
+			# flash[:error] = "You made an error. Do it again"
 			render :new
 			#there is another command here I can use...
 		end

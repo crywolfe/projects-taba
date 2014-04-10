@@ -1,6 +1,8 @@
 <%= render "/heading" %>
 
 <h4>
+	flash[:error]
+	
 	Sign Up Below
 
 	<%= form_tag("/users", method: "post") do %>

@@ -20,7 +20,7 @@ class JournalEntriesController < ApplicationController
 		if @journal_entry.save
 			redirect_to(user_journal_entries_path)
     else
-    	# flash[:error] = "You made an error."
+    	flash[:error] = "You made an error."
       render :new
     end
 	end
