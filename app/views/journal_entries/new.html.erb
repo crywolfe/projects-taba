@@ -6,6 +6,8 @@
 	The current date is <%= Date.today.month %>-<%= Date.today.day %>-<%= Date.today.year %>.
 <h4>Pull the lower right hand corner of the post window to expand it.
 
+	flash[:error]
+
 	<%= form_tag("/users/#{current_user.id}/journal_entries", method: "POST") do %>
 		<br>
 	  <%= label_tag(:Journal_Entry) %><br>
