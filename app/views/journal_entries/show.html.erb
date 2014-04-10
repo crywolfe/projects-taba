@@ -1,18 +1,18 @@
-<%= render "/heading" %>
+<%= render '/heading' %>
 
 <h3>Hello <%= current_user.name %> </h3>
-<h4> <%= link_to("add", new_user_journal_entry_path) %> a journal entry </h4>
-<h4> <%= link_to("list", user_journal_entries_path) %> all journal entries </h4>
+<h4> <%= link_to('add', new_user_journal_entry_path) %> a journal entry </h4>
+<h4> <%= link_to('list', user_journal_entries_path) %> all journal entries </h4>
 
 <!-- need to clean up the date -->
-<p>Your journal entry for <%= @journal_entry.created_at%> is below</p>
+<p>Your journal entry for <%= @journal_entry.created_at %> is below</p>
 <p>---------------</p>
 
 <p><b><%= @journal_entry.body %></b></p>
 
 <p>---------------</p>
 <h4> 
-	<button type="button"><a href="/users/<%= current_user.id %>/journal_entries/<%= @journal_entry.id %>">Extract</a></button> sample phrases from this journal entry.  
+	<button type='button'><a href="/users/<%= current_user.id %>/journal_entries/<%= @journal_entry.id %>">Extract</a></button> sample phrases from this journal entry.  
 </h4>
 
 

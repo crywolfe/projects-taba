@@ -8,9 +8,9 @@
 
 	flash[:error]
 
-	<%= form_tag("/users/#{current_user.id}/journal_entries", method: "POST") do %>
+	<%= form_tag(user_journal_entries_path, method: "POST") do %>
 		<br>
-	  <%= label_tag(:Journal_Entry) %><br>
+	  <%= label_tag("Journal entry".titleize) %><br>
 
 	  <%= text_area_tag(:body) %>
 	  <br>
