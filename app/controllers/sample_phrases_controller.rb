@@ -15,6 +15,7 @@ class SamplePhrasesController < ApplicationController
 		@sample_phrases = JournalEntry.SamplePhrase.all
 		@moods = Mood.all
 		@sample_phrase
+		@google_predictions = "https://www.googleapis.com/prediction/v1.6/projects/414649711441/hostedmodels/sample.sentiment/predict"
 	end
 
 	def edit

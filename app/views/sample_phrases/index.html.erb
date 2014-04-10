@@ -8,6 +8,7 @@ index
 <!-- Call partial of sample_phrase table to render table -->
 	<%= render partial: 'sample_phrase_table', collection: @sample_phrases, as: 'sample_phrase' %>
 
-<h4> <button type='button'><a href=''>Submit</a></button> to the Predictions Engine.  </h4>
+<%= button_to('Submit to Predictions') %>
+<h4> <button type='button'><a href='https://www.googleapis.com/prediction/v1.6/projects/414649711441/hostedmodels/sample.sentiment/predict'>Submit</a></button> to the Prediction Engine.  </h4>
 
 

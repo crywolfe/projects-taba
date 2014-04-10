@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 
-
 	def index
 	end
 
@@ -47,8 +46,5 @@ class UsersController < ApplicationController
  #      :password_confirmation
  #    )
  #  end
-
-
-
 
 end
