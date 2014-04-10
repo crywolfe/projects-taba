@@ -46,26 +46,22 @@ gem 'bcrypt', '~> 3.1.7'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'pry-rails'
-
 # gem 'ap'
 
-gem 'awesome_print'
-
-
-group :test do
+group :development, :test do
   gem 'shoulda-matchers'
+  gem 'annotate'
+  gem 'rails-erd'
+  gem 'rspec-rails', '~> 2.14.2'
+  gem 'capybara'
+  gem 'pry-rails'
+  gem 'awesome_print'
+  gem 'factory_girl_rails'
+  gem 'rubocop'
 end
-
-gem 'annotate'
-
-group :development do
-	gem 'rails-erd'
-end
-
-gem 'rspec-rails', '~> 2.14.2'
 
 gem 'httparty'
 
 gem 'rails_12factor', group: :production
+
 
