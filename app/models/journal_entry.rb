@@ -61,7 +61,7 @@ class JournalEntry < ActiveRecord::Base
 
 	def create_csv(phrases)
 		#take the phrase array and output it to a csv file.
-		CSV.open("sample_phrases.csv", "wb") do |csv|
+		CSV.open('sample_phrases.csv', 'wb') do |csv|
 			csv << phrases
 		end
 	end

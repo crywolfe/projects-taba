@@ -1,8 +1,8 @@
-<%= render "/heading" %>
+<%= render '/heading' %>
 
 <h3>Hello <%= current_user.name %> </h3>
 
-<h3> <%= link_to("Add", new_user_journal_entry_path) %> a journal entry </h3>
+<h3> <%= link_to('Add', new_user_journal_entry_path) %> a journal entry </h3>
 
 <h4>Thank you for your writing in your journal.</h4>
 <h4>Writing in a journal is a good habit to have.</h4>
@@ -27,7 +27,7 @@
 <% end %>
 
 <p>
-    <a href="/logout"> Logout</a>
+    <%= link_to("logout", logout)%>
 </p>
 
 
