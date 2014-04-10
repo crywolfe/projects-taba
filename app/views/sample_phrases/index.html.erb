@@ -1,13 +1,13 @@
 index
-<%= render "/heading" %>
+<%= render '/heading' %>
 
 <h3>Hello <%= current_user.name %> </h3>
 <h4>This is your sample phrase and mood submission page.</h4>
-<p>Just assign a mood to each sample phrase taken from your journal, click "Submit" at the bottom and the app will do the rest.</p>
+<p>Just assign a mood to each sample phrase taken from your journal, click 'Submit' at the bottom and the app will do the rest.</p>
 
 <!-- Call partial of sample_phrase table to render table -->
-	<%= render partial: "sample_phrase_table", collection: @sample_phrases, as: "sample_phrase" %>
+	<%= render partial: 'sample_phrase_table', collection: @sample_phrases, as: 'sample_phrase' %>
 
-<h4> <button type="button"><a href="">Submit</a></button> to the Predictions Engine.  </h4>
+<h4> <button type='button'><a href=''>Submit</a></button> to the Predictions Engine.  </h4>
 
 

@@ -3,6 +3,10 @@ h1, h2, h3, h4, ul, p, a, table {
 	color: gray;
 }
 
+button {
+	font-size: 1em;
+}
+
 body {
 
 	width: 600px ;
