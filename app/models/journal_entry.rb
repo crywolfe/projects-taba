@@ -23,7 +23,8 @@ class JournalEntry < ActiveRecord::Base
 
 	# end
 	def extract
-			sentences = extract_sentences
+			phrases = extract_sentences
+			create_sample_phrases(phrases)
 	end
 
 	def extract_sentences
@@ -42,11 +43,18 @@ class JournalEntry < ActiveRecord::Base
 				# TODO: use each_with_index which takes two block args ||
 				phrases[phrases.index(n)] << phrases[phrases.index(n)+1]
 				phrases.slice!(phrases.index(n)+1)
-
 			end #phrase.map do
 		end #if phrase
 
 		return phrases
 	end
+
+	def create_sample_phrases(phrases)
+    #take each element of the phrase array and enter it into the SamplePhrase table
+    phrases.each do |phrase|
+      sample = SamplePhrase.create(:phrase => phrase)
+      self.sample_phrases << sample
+    end
+  end
 
 end
