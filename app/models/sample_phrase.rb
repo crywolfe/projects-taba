@@ -32,6 +32,7 @@ class SamplePhrase < ActiveRecord::Base
     end
 
     #create taba_bucket folder in google cloud storage
+    #NOTE:  Need to figure out how to do 'gsutil stat' on just the folder to see if the folder exists.  If it exists, then don't run the command.  If it doesn't exist, then run the command.
     `gsutil mb gs://taba_bucket`
     #upload csv to google cloud storage using gsutil command
     `gsutil cp sample_phrases.csv gs://taba_bucket/sample_phrases.csv`
