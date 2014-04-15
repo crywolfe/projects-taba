@@ -3,7 +3,7 @@
 # Table name: journal_entries
 #
 #  id         :integer          not null, primary key
-#  body       :string(255)
+#  body       :text
 #  created_at :datetime
 #  updated_at :datetime
 #  user_id    :integer

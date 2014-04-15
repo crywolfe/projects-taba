@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: sample_phrases
+#
+#  id               :integer          not null, primary key
+#  phrase           :text
+#  created_at       :datetime
+#  updated_at       :datetime
+#  journal_entry_id :integer
+#
+
 require 'spec_helper'
 
 describe JournalEntry do

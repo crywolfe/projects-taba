@@ -1,3 +1,10 @@
+<!-- <form>
+	<% @parrots = %w(white blue red green yellow) %>
+	<% @parrots.each_with_index do |parrot, index| %>
+		<input type="text" value="<%= parrot %>" name="bird_<%= index %>">
+	<% end %>
+	<input type="submit" value="click">
+</form> -->
 <%= render '/heading' %>
 
 <h3>Hello <%= current_user.name %> </h3>
@@ -13,32 +20,26 @@
 			<th>Sample Phrase</th>
 		</tr>
 	</thead>
+<form>
+	<tbody>
+		<% @sample_phrases.each_with_index do |sample_phrase, index| %>
 
-<%= form_for @article, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
-  <%= f.text_field :title %>
-  <%= f.text_area :body, size: "60x12" %>
-  <%= f.submit "Create" %>
-<% end %>
-
-
-<tbody>
-	<% @sample_phrases.each do |sample_phrase| %>
-
-			<tr>		
-				<td>
-					<select>
-						<% @moods.each do |mood| %>
-							<option value="#{mood.name}"><%= mood.name %></option>
-						<% end %>
-					</select>
-				</td>
-				<td>
-					<%= sample_phrase %>
-				</td>
-			</tr>
-	<% end %>
-</tbody>
-
+				<tr>		
+					<td>
+						<select name="<%= sample_phrase %>">
+							<% @moods.each do |mood| %>
+								<option value="<%= mood.id %>"><%= mood.name %></option>
+							<% end %>
+						</select>
+					</td>
+					<td>
+						<%= sample_phrase %>
+					</td>
+				</tr>
+		<% end %>
+	</tbody>
+	<input type="submit" value="create">
+</form>
 </table>
 
 <%= link_to('Submit to Predictions', user_journal_entry_sample_phrases_path(current_user, @journal_entry.id)) %>
