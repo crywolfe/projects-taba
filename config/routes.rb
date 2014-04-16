@@ -20,8 +20,7 @@ Taba::Application.routes.draw do
   get  '/logout' => 'session#destroy'
   get '/redirect_url' => 'session#oauth'
 
-
-
+  post '/to_csv' => 'sample_phrases#to_csv'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

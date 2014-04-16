@@ -20,7 +20,8 @@
 			<th>Sample Phrase</th>
 		</tr>
 	</thead>
-<form>
+<form action="/to_csv" method="POST">
+	<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 	<tbody>
 		<% @sample_phrases.each_with_index do |sample_phrase, index| %>
 
@@ -37,18 +38,19 @@
 					</td>
 				</tr>
 		<% end %>
+			<input type="submit" value="create">
+
 	</tbody>
-	<input type="submit" value="create">
 </form>
 </table>
 
 <%= link_to('Submit to Predictions', user_journal_entry_sample_phrases_path(current_user, @journal_entry.id)) %>
 
-<h4> <button type='button'><a href='https://www.googleapis.com/prediction/v1.6/projects/414649711441/hostedmodels/sample.sentiment/predict'>Submit</a></button> to the Predictions Engine.  </h4>
-
+<!-- <h4> <button type='button'><a href='https://www.googleapis.com/prediction/v1.6/projects/414649711441/hostedmodels/sample.sentiment/predict'>Submit</a></button> to the Predictions Engine.  </h4>
+ -->
 <h3> <%= link_to('Add', new_user_journal_entry_path) %> another journal entry </h3>
 
-<!-- <%= button_to('Submit to Predictions 12', @google_prediction) %>
+<!-- <%# button_to('Submit to Predictions 12', @google_prediction) %>
  -->
 
 
