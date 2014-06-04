@@ -20,19 +20,8 @@
 
 			<p><a href="/users/<%= current_user.id %>/journal_entries">View </a> Your Journal Entries</p>
 
-			<h4>Mood Options</h4>
-			<ul>
-			<p><a href="/moods">View</a> Available Moods</p>
-
-
-			<p>Add Moods to Your Mood List</p>
-
-			<p>View your Mood History</p>
-			</ul>
 		</ul>
 
-			<a href='<%= oauth %>'>GENERATE OAUTH</a>	
-	
 		<p>
       <%= link_to('Logout_user'.titleize, logout_path) %>
 		</p>

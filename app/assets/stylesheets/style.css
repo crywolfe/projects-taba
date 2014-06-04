@@ -1,13 +1,25 @@
 h1, h2, h3, h4, ul, p, a, table {
 	font-family: 'Cardo', serif;
-	color: gray;
+	color: white;
 }
 
 button {
 	font-size: 1em;
 }
 
+
+
 body {
+	background-color: #7f674d;
+	background: url('Stipula_fountain_pen.jpg') center repeat-y #7f674d; /* add a fallback color of #d6d6d6 */
+	background-size: 1200px;
+	min-height: 300px;
+	font-family: 'Comfortaa', 'cursive';
+	text-align: center;
+
+}
+
+/*body {
 
 	width: 600px ;
   margin-left: auto ;
@@ -15,7 +27,7 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: rgb(239, 243, 243);
-}
+}*/
 
 a:hover {
 	color: brown;
