@@ -16,8 +16,7 @@
 	<caption><b>Phrases and Outcomes Table</b> </caption>
 	<thead>
 		<tr>
-			<th>Mood</th>
-			<th>Sample Phrase</th>
+			<th>Phrase</th>
 			<th>Value Outcome</th>
 		</tr>
 	</thead>
@@ -28,16 +27,10 @@
 
 				<tr>
 					<td>
-						<select name="<%= sample_phrase %>">
-							<% @moods.each do |mood| %>
-								<option value="<%= mood.id %>"><%= mood.name %></option>
-							<% end %>
-						</select>
-					</td>
-					<td>
 						<%= sample_phrase %>
 					</td>
 					<td>
+						<%= @outcome %>
 
 					</td>
 				</tr>
