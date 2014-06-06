@@ -1,18 +1,18 @@
-/*
- * Copyright 2013 Boris Smus. All Rights Reserved.
 
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+navigator.getUserMedia = navigator.getUserMedia ||
+                         navigator.webkitGetUserMedia ||
+                         navigator.mozGetUserMedia ||
+                         navigator.msGetUserMedia;
+
+var video = document.querySelector('video');
+
+if(navigator.getUserMedia){
+  navigator.getUserMedia({video:true},function(stream){
+    video.src = window.URL.createObjectURL(stream);
+  }, errorCallback);
+  } else {
+    video.src ='somevideo.webm'; // fallback.
+  }
 
 
 navigator.getUserMedia = (navigator.getUserMedia ||
@@ -75,7 +75,7 @@ MicrophoneSample.prototype.visualize = function() {
 
     drawContext.fillStyle = 'blue';
     // drawContext.fillRect(i * barWidth, offset, 10, 10);
-    drawContext.fillRect(newOffset - 15,i * barHeight, 30, 5);
+    drawContext.fillRect(newOffset - 15,i * barHeight, 3`0, 5);
   }
   requestAnimFrame(this.visualize.bind(this));
 };
