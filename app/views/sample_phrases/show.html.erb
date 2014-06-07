@@ -9,15 +9,15 @@
 
 <h3>Hello <%= current_user.name %> </h3>
 
-<h4>This is your mood and sample phrase submission page.</h4>
+<h4>This is your phrases page.</h4>
 <p>Just assign a mood to each sample phrase taken from your journal, click "Submit" at the bottom and the app will do the rest.</p>
 
 <table border=1 cellpadding=5>
-	<caption><b>Mood and Sample Phrase Table</b> </caption>
+	<caption><b>Phrases and Outcomes Table</b> </caption>
 	<thead>
 		<tr>
-			<th>Mood</th>
-			<th>Sample Phrase</th>
+			<th>Phrase</th>
+			<th>Value Outcome</th>
 		</tr>
 	</thead>
 <form action="/to_csv" method="POST">
@@ -25,16 +25,13 @@
 	<tbody>
 		<% @sample_phrases.each_with_index do |sample_phrase, index| %>
 
-				<tr>		
-					<td>
-						<select name="<%= sample_phrase %>">
-							<% @moods.each do |mood| %>
-								<option value="<%= mood.id %>"><%= mood.name %></option>
-							<% end %>
-						</select>
-					</td>
+				<tr>
 					<td>
 						<%= sample_phrase %>
+					</td>
+					<td>
+						<%= @outcome %>
+
 					</td>
 				</tr>
 		<% end %>
@@ -52,6 +49,3 @@
 
 <!-- <%# button_to('Submit to Predictions 12', @google_prediction) %>
  -->
-
-
-

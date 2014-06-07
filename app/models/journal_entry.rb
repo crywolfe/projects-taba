@@ -57,4 +57,26 @@ class JournalEntry < ActiveRecord::Base
     end
   end
 
+	def get_sentiment(phrases)
+		phrases.each do |phrase|
+
+			#need to gsub phrase space with +
+			encoded_phrase = phrase.gsub(" ", "+")
+			user = "crywolfe"
+			pwd = "rubi12_b"
+			raw_response = `curl -s -d "User=#{user}&Pass=#{pwd}&Lang=Eng&ID=1&Detail=Detailed&Theme=Gen&OutFormat=JSON&Normalized=Yes&Text=#{encoded_phrase}" "http://svc8.bitext.com/WS_Nops_Val/Service.aspx"`
+			jsonified_response = JSON.parse(raw_response)
+			global_value = jsonified_response["data"][0]["global_value"]
+			binding.pry
+
+			word_cloud = jsonified_response["data"][0]["details"][0]["valuers_norm"].split(",")
+			
+
+		end
+
+
+
+
+	end
+
 end

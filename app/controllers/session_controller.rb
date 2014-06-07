@@ -21,9 +21,4 @@ class SessionController < ApplicationController
     redirect_to(root_path)
   end
 
-  def oauth
-    verification_url = 'https://www.googleapis.com/oauth2/v1/tokeninfo'
-    session[:google_access] = params[:code]
-    redirect_to(users_path)
-  end
 end
