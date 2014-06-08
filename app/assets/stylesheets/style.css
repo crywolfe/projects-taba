@@ -4,15 +4,18 @@ h1, h2, h3, h4, ul, p, a, table {
 	color: white;
 }
 
+h1 {
+	font-size: 2.5em;
+}
+
 button {
 	font-size: 1.5em;
 }
 
 
-
 body {
 	background-color: #7f674d;
-	background: url('Stipula_fountain_pen.jpg') center repeat-y #7f674d; /* add a fallback color of #d6d6d6 */
+	background: url("Stipula_fountain_pen.jpg") center repeat-y #7f674d; /* add a fallback color of #d6d6d6 */
 	background-size: 1200px;
 	min-height: 300px;
 	font-family: 'Comfortaa', 'cursive';
@@ -169,6 +172,17 @@ a:hover {
   display: none;
 }
 
+video {
+	width:397px;
+	height:300px;
+	background: rgba(255,255,255,0.5);
+	border:4px ridge #bc9959;
+
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
 
 /*
   Loading text:
@@ -177,7 +191,7 @@ a:hover {
   Hide by default
 */
 
-#loading {
+/*#loading {
   position: absolute;
   z-index: 1;
   bottom: 50%;
@@ -189,10 +203,8 @@ a:hover {
   letter-spacing: .1em;
   opacity: 0;
   filter: alpha(opacity=0);
-}
-
-</style>
-
+}*/
+/*
 
 <!-- IE7 positions the buttons incorrectly; compensate -->
 
@@ -202,4 +214,4 @@ a:hover {
   top: 50px;
 }
 </style>
-<![endif]-->
+<![endif]-->*/
