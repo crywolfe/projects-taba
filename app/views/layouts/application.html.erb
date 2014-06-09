@@ -4,6 +4,7 @@
 	<!-- <link href='http://fonts.googleapis.com/css?family=Cardo:400,700' rel='stylesheet' type='text/css'> -->
 	<link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Old+Standard+TT' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
 
   <title>Taba</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -15,5 +16,30 @@
 	<div class="main">
 		<%= yield %>
 	</div>
+	<video autoplay></video>
+	<img src="">
+	<script>
+		var video = document.querySelector('video');
+		var canvas = document.querySelector('canvas');
+		var ctx = canvas.getContext('2d');
+		var localMediaStream = null;
+
+		function snapshot() {
+			if (localMediaStream) {
+				ctx.drawImage(video, 0, 0);
+				// "image/webp" works in Chrome.
+				// Other browsers will fall back to image/png.
+				document.querySelector('img').src = canvas.toDataURL('image/webp');
+			}
+		}
+
+		video.addEventListener('click', snapshot, false);
+
+		// Not showing vendor prefixes or code that works cross-browser.
+		navigator.getUserMedia({video: true}, function(stream) {
+			video.src = window.URL.createObjectURL(stream);
+			localMediaStream = stream;
+		}, function(){alert("error")});
+	</script>
 </body>
 </html>

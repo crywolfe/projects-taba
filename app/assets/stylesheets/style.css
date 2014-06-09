@@ -184,6 +184,12 @@ video {
 	padding-bottom: 10px;
 }
 
+.entry {
+	font-family: 'Tangerine', cursive;
+	font-size: 36px;
+	background: rgba(248, 231, 193, 0.88);
+}
+
 /*
   Loading text:
 
