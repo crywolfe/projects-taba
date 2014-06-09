@@ -76,8 +76,6 @@ class JournalEntry < ActiveRecord::Base
 			@words_cloud[0] << word_cloud
 			# @words_cloud[0] << word_cloud_2
 			@words_cloud[1] << global_value
-binding.pry
-
 		end #phrases
 		@words_cloud
 

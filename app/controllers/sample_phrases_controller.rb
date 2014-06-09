@@ -14,7 +14,6 @@ class SamplePhrasesController < ApplicationController
 	def create
 		# @sample_phrases = SamplePhrase.new
 		# @journal_entries = JournalEntry.all
-		binding.pry
 
 		@journal_entry = JournalEntry.find_by(id: params[:id])
 		# @journal_entry.extract

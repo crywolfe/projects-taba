@@ -15,7 +15,6 @@ class SamplePhrase < ActiveRecord::Base
 
 
   def save_extracted_phrases_with_moods
-    binding.pry
     phrases = @sample_phrases
   end
 
