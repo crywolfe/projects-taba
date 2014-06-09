@@ -13,5 +13,10 @@
 class WordsCloud < ActiveRecord::Base
   belongs_to :journal_entry
 
+  def populate(word_cloud)
+    word_cloud[0].flatten
+
+  end
+
 
 end

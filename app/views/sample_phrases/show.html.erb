@@ -11,8 +11,15 @@
 
 <h4>This is your phrases and value outcomes page.</h4>
 
+<p>
+	The Global Mood Value for your journal entry is
+</p>
+<p>
+	<%= @average %>
+</p>
+
 <table border=1 cellpadding=5>
-	<caption><b>Phrases and Outcomes Table</b> </caption>
+	<caption><b>Phrases and Moods Results</b> </caption>
 	<thead>
 		<tr>
 			<th>Phrase</th>
@@ -20,7 +27,6 @@
 			<th>Mood Value</th>
 		</tr>
 	</thead>
-<form action="/to_csv" method="POST">
 	<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 	<tbody>
 		<% @sample_phrases.each_with_index do |sample_phrase, index| %>
@@ -40,9 +46,8 @@
 				</tr>
 		<% end %>
 	</tbody>
-</form>
 </table>
 
 <!-- <%= link_to('Submit to Predictions', user_journal_entry_sample_phrases_path(current_user, @journal_entry.id)) %> -->
 
-<h3> <%= link_to('Add', new_user_journal_entry_path) %> another journal entry </h3>
+<h3> <%= link_to('Word Cloud', new_user_journal_entry_path) %> </h3>

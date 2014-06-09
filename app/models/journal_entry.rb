@@ -81,4 +81,5 @@ class JournalEntry < ActiveRecord::Base
 
 	end #get_sentiment
 
+
 end

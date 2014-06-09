@@ -28,8 +28,8 @@ class JournalEntriesController < ApplicationController
 
 		@outcome = @journal_entry.get_sentiment(@sample_phrases)
 		# @sample_phrases = SamplePhrase.all
-		binding.pry
 		# @moods = Mood.all
+		@average = (@outcome[1].inject(:+)/(@outcome[1].length))*10
 		render 'sample_phrases/show'
 	end
 
