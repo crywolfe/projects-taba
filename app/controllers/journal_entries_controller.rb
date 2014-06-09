@@ -28,7 +28,8 @@ class JournalEntriesController < ApplicationController
 
 		@outcome = @journal_entry.get_sentiment(@sample_phrases)
 		# @sample_phrases = SamplePhrase.all
-		@moods = Mood.all
+		binding.pry
+		# @moods = Mood.all
 		render 'sample_phrases/show'
 	end
 

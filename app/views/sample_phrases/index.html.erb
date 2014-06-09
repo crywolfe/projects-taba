@@ -2,11 +2,7 @@ index
 <%= render '/heading' %>
 
 <h3>Hello <%= current_user.name %> </h3>
-<h4>This is your sample phrase and mood submission page.</h4>
-<p>Just assign a mood to each sample phrase taken from your journal, click 'Submit' at the bottom and the app will do the rest.</p>
+<h4>This is your Phrase and Value Outcome page.</h4>
 
 <!-- Call partial of sample_phrase table to render table -->
 	<%= render partial: 'sample_phrase_table', collection: @sample_phrases, as: 'sample_phrase' %>
-
-
-

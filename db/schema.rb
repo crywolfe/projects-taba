@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140403142325) do
+ActiveRecord::Schema.define(version: 20140609172123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,14 @@ ActiveRecord::Schema.define(version: 20140403142325) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin",           default: false
+  end
+
+  create_table "words_clouds", force: true do |t|
+    t.string   "words",      default: [], array: true
+    t.string   "word"
+    t.integer  "frequency"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

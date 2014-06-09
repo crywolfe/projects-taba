@@ -9,15 +9,15 @@
 
 <h3>Hello <%= current_user.name %> </h3>
 
-<h4>This is your phrases page.</h4>
-<p>Just assign a mood to each sample phrase taken from your journal, click "Submit" at the bottom and the app will do the rest.</p>
+<h4>This is your phrases and value outcomes page.</h4>
 
 <table border=1 cellpadding=5>
 	<caption><b>Phrases and Outcomes Table</b> </caption>
 	<thead>
 		<tr>
 			<th>Phrase</th>
-			<th>Value Outcome</th>
+			<th>Important Words</th>
+			<th>Mood Value</th>
 		</tr>
 	</thead>
 <form action="/to_csv" method="POST">
@@ -30,22 +30,19 @@
 						<%= sample_phrase %>
 					</td>
 					<td>
-						<%= @outcome %>
+						<%= @outcome[0][index].join(", ") %>
+
+					</td>
+					<td>
+						<%= @outcome[1][index] %>
 
 					</td>
 				</tr>
 		<% end %>
-			<input type="submit" value="create">
-
 	</tbody>
 </form>
 </table>
 
-<%= link_to('Submit to Predictions', user_journal_entry_sample_phrases_path(current_user, @journal_entry.id)) %>
+<!-- <%= link_to('Submit to Predictions', user_journal_entry_sample_phrases_path(current_user, @journal_entry.id)) %> -->
 
-<!-- <h4> <button type='button'><a href='https://www.googleapis.com/prediction/v1.6/projects/414649711441/hostedmodels/sample.sentiment/predict'>Submit</a></button> to the Predictions Engine.  </h4>
- -->
 <h3> <%= link_to('Add', new_user_journal_entry_path) %> another journal entry </h3>
-
-<!-- <%# button_to('Submit to Predictions 12', @google_prediction) %>
- -->
