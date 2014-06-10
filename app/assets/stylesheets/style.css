@@ -1,6 +1,7 @@
 h1, ul, table {
 	font-family: 'Cardo', serif;
 	color: white;
+	margin: 10px 10px 10px 10px;
 }
 
 h2, h3, h4, p, a, {
@@ -14,6 +15,20 @@ h1 {
 
 h2 {
 	color: white;
+	margin: 10px 10px 10px 10px;
+
+}
+
+h3 {
+	color: white;
+}
+
+h4 {
+	color: white;
+}
+
+label {
+
 }
 
 p, a {

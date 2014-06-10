@@ -16,14 +16,14 @@
 
 		<ul>
 
-			<p><a href="/users/<%= current_user.id %>/journal_entries/new">Write </a> a Journal Entry</p>
+			<p><a href="/users/<%= current_user.id %>/journal_entries/new">Write</a> a journal entry</p>
 
-			<p><a href="/users/<%= current_user.id %>/journal_entries">View </a> Your Journal Entries</p>
+			<p><a href="/users/<%= current_user.id %>/journal_entries">View</a> your journal entries</p>
 
 		</ul>
 
 		<p>
-      <%= link_to('Logout_user'.titleize, logout_path) %>
+      <%= link_to('Logout'.titleize, logout_path) %>
 		</p>
 
 	<% end %>
