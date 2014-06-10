@@ -190,6 +190,11 @@ video {
 	background: rgba(248, 231, 193, 0.88);
 }
 
+table.center {
+    margin-left:auto;
+    margin-right:auto;
+  }
+
 /*
   Loading text:
 
