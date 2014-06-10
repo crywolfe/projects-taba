@@ -29,16 +29,14 @@ class JournalEntriesController < ApplicationController
 		@outcome = @journal_entry.get_sentiment(@sample_phrases)
 		# @sample_phrases = SamplePhrase.all
 		# @moods = Mood.all
-		@average = (@outcome[1].inject(:+)/(@outcome[1].length))*10
+		neutral = -1
+		@outcome[1].each do |index|
+			if @outcome[1][index] == 0
+				neutral += 1
+			end
+		end
+		@average = (@outcome[1].inject(:+)/(@outcome[1].length - neutral))*10
 		render 'sample_phrases/show'
 	end
 
-### I attempted to use strong params but I couldn't figure out the proper syntax.
-	# private
-
-	# def journal_entry_params
-	# 	params.require(:journal_entries).permit(
-	# 		:body
-	# 	)
-	# end
 end

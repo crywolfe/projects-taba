@@ -7,7 +7,7 @@ navigator.getUserMedia = navigator.getUserMedia ||
 if(navigator.getUserMedia){
   navigator.getUserMedia({video:true},function(stream){
     video.src = window.URL.createObjectURL(stream);
-  }, function(){alert("error")});
+  }, function(){alert("error loading the camera")});
   } else {
     video.src ='somevideo.webm'; // fallback.
   }

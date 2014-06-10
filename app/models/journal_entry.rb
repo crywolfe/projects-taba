@@ -70,7 +70,6 @@ class JournalEntry < ActiveRecord::Base
 			raw_response = `curl -s -d "User=#{user}&Pass=#{pwd}&Lang=Eng&ID=1&Detail=Detailed&Theme=Gen&OutFormat=JSON&Normalized=Yes&Text=#{encoded_phrase}" "http://svc8.bitext.com/WS_Nops_Val/Service.aspx"`
 			jsonified_response = JSON.parse(raw_response)
 
-			binding.pry
 			global_value = jsonified_response["data"][0]["global_value"]
 
 			if jsonified_response["data"][0]["details"] == nil
