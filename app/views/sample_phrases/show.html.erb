@@ -31,19 +31,19 @@
 	<tbody>
 		<% @sample_phrases.each_with_index do |sample_phrase, index| %>
 
-				<tr>
-					<td>
-						<%= sample_phrase %>
-					</td>
-					<td>
-						<%= @outcome[0][index].join(", ") %>
+			<tr>
+				<td>
+					<%= sample_phrase %>
+				</td>
+				<td>
+					<%= @outcome[0][index].join(", ") %>
 
-					</td>
-					<td>
-						<%= @outcome[1][index] %>
+				</td>
+				<td>
+					<%= @outcome[1][index] %>
 
-					</td>
-				</tr>
+				</td>
+			</tr>
 		<% end %>
 	</tbody>
 </table>

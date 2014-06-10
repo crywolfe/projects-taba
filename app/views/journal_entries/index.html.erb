@@ -14,10 +14,10 @@
 	<% parsed_date = unparsed_date.strftime("%m - %d - %y - %A") %>
 
 <!-- Using Entry ID just to keep track of the journal id.  Will need to get rid of it in final implementation.
- -->	
+ -->
  <p>
  <% if current_user.id == entry.user_id %>
-		Entry No. <%= entry.id %> -->
+		<!-- Entry No. <%= entry.id %> --> -->
  		<a href="/users/<%= current_user.id %>/journal_entries/<%= entry.id %>"><%= parsed_date %></a><br>
  		<!-- link_to "DATE", user_journal_entry_path(current_user, entry) -->
  		<!-- could i also use journal_entries.where("column = 'XXXX'")??? -->
@@ -29,6 +29,3 @@
 <p>
     <%= link_to('Logout_user'.titleize, logout_path) %>
 </p>
-
-
-
