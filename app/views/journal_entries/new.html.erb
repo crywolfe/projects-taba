@@ -7,8 +7,8 @@
 </h3>
 <h4>
 	<%= form_tag(user_journal_entries_path, method: "POST") do %>
-	  <%= label_tag("Journal Entry".titleize) %>
-	  <%= text_area_tag(:body, nil, size: "80x13", class: "entry") %>
+	  <!-- <%= label_tag("Journal Entry".titleize) %> -->
+	  <%= text_area_tag(:body, nil, size: "30x10", class: "entry") %>
 	  <br>
 
 	  <%= submit_tag("Moodify Your Journal Entry") %>
