@@ -62,6 +62,9 @@ end
 
 gem 'httparty'
 
-gem 'rails_12factor', group: :production
+group :production do
+  gem 'rails_12factor'
+  gem 'newrelic_rpm'
+end
 
 gem 'json'
