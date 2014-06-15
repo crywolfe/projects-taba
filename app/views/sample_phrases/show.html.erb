@@ -36,18 +36,16 @@
 					<%= sample_phrase %>
 				</td>
 				<td>
-					<%= @outcome[0][index].join(", ") %>
+					<%= @outcome[0] %>
 
 				</td>
 				<td>
-					<%= @outcome[1][index] %>
+					<%= @outcome[1] %>
 
 				</td>
 			</tr>
 		<% end %>
 	</tbody>
 </table>
-
-<!-- <%= link_to('Submit to Predictions', user_journal_entry_sample_phrases_path(current_user, @journal_entry.id)) %> -->
 
 <h3> <%= link_to('Word Cloud', new_user_journal_entry_path) %> </h3>

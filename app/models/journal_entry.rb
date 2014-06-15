@@ -72,7 +72,6 @@ class JournalEntry < ActiveRecord::Base
 
 			global_value = jsonified_response["data"][0]["global_value"]
 
-
 			if jsonified_response["data"][0]["details"] == nil
 				word_cloud = ["neutral"]
 			else
