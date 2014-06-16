@@ -25,10 +25,28 @@ class SamplePhrasesController < ApplicationController
 	end
 
 	def show
-		@sample_phrases = SamplePhrase.all
-		@journal_entries = JournalEntry.all
-		@moods = Mood.all
-		@sample_phrase
+		# @sample_phrases = SamplePhrase.all
+		# @journal_entries = JournalEntry.all
+		# @moods = Mood.all
+		# @sample_phrase
+		# @outcome
+		# binding.pry
+
+
+		@journal_entry = JournalEntry.find_by(params[:id])
+binding.pry
+		@sample_phrases = @journal_entry.extract
+		@outcome = @journal_entry.get_sentiment(@sample_phrases)
+		neutral = -1
+		@outcome[1].each do |index|
+			if @outcome[1][index] == 0
+				neutral += 1
+			end
+		end
+		@average = (@outcome[1].inject(:+)/(@outcome[1].length - neutral))*10
+
+		# render 'journal_entries/show'
+		render 'sample_phrases/show'
 	end
 
 

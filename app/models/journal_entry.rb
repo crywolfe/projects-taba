@@ -61,6 +61,7 @@ class JournalEntry < ActiveRecord::Base
 		@words_cloud = []
 		@words_cloud[0] = []
 		@words_cloud[1] = []
+		binding.pry
 		phrases.each do |phrase|
 
 			#need to gsub phrase space with + to make it encoding friendly

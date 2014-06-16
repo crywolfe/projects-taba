@@ -16,28 +16,28 @@ class JournalEntriesController < ApplicationController
 			:user_id => current_user.id
 			)
 		@journal_entry.save
-		binding.pry
-
-		# redirect_to(user_journal_entries_path)
-		redirect_to(edit_user_journal_entry_sample_phrases_path)
+		redirect_to(user_journal_entries_path)
+		# redirect_to(edit_user_journal_entry_sample_phrases_path)
 
 # render 'sample_phrases/show'
 	end
 
 	def show
 
-		@journal_entry = JournalEntry.find_by(id: params[:id])
-		@sample_phrases = @journal_entry.extract
-binding.pry
-		@outcome = @journal_entry.get_sentiment(@sample_phrases)
-		neutral = -1
-		@outcome[1].each do |index|
-			if @outcome[1][index] == 0
-				neutral += 1
-			end
-		end
-		@average = (@outcome[1].inject(:+)/(@outcome[1].length - neutral))*10
-		render 'sample_phrases/show'
+# 		@journal_entry = JournalEntry.find_by(params[:id])
+# 		@sample_phrases = @journal_entry.extract
+# binding.pry
+# 		@outcome = @journal_entry.get_sentiment(@sample_phrases)
+# 		neutral = -1
+# 		@outcome[1].each do |index|
+# 			if @outcome[1][index] == 0
+# 				neutral += 1
+# 			end
+# 		end
+# 		@average = (@outcome[1].inject(:+)/(@outcome[1].length - neutral))*10
+#
+# 		# render 'journal_entries/show'
+# 		render 'sample_phrases/show'
 	end
 
 end
