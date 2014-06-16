@@ -24,6 +24,7 @@ class JournalEntriesController < ApplicationController
 		# @journal_entry.extract
 		# redirect_to(user_journal_entry_sample_phrases_path([current_user, @journal_entry]))
 		# redirect_to([:show, current_user, @journal_entry])
+		binding.pry
 		@sample_phrases = @journal_entry.extract
 
 		@outcome = @journal_entry.get_sentiment(@sample_phrases)
