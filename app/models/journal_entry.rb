@@ -77,6 +77,7 @@ class JournalEntry < ActiveRecord::Base
 			else
 				word_cloud = jsonified_response["data"][0]["details"][0]["valuers_norm"].split(",")
 			end
+			# Use the following line of code when ready to take in more subjects for word cloud.
 			# word_cloud_2 = jsonified_response["data"][0]["details"][0]["valuables_norm"].split(",")
 
 			@words_cloud[0] << word_cloud
