@@ -32,9 +32,7 @@ class SamplePhrasesController < ApplicationController
 		# @outcome
 		# binding.pry
 
-
 		@journal_entry = JournalEntry.find_by(params[:id])
-binding.pry
 		@sample_phrases = @journal_entry.extract
 		@outcome = @journal_entry.get_sentiment(@sample_phrases)
 		neutral = -1

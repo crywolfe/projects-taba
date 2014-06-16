@@ -23,7 +23,6 @@ class JournalEntriesController < ApplicationController
 	end
 
 	def show
-<<<<<<< Updated upstream
 
 # 		@journal_entry = JournalEntry.find_by(params[:id])
 # 		@sample_phrases = @journal_entry.extract
@@ -39,7 +38,7 @@ class JournalEntriesController < ApplicationController
 #
 # 		# render 'journal_entries/show'
 # 		render 'sample_phrases/show'
-=======
+
 		@journal_entry = JournalEntry.find_by(id: params[:id])
 		# @journal_entry.extract
 		# redirect_to(user_journal_entry_sample_phrases_path([current_user, @journal_entry]))
@@ -50,9 +49,7 @@ class JournalEntriesController < ApplicationController
 		@outcome = @journal_entry.get_sentiment(@sample_phrases)
 		# @sample_phrases = SamplePhrase.all
 		@moods = Mood.all
-		binding.pry
 		render 'sample_phrases/show'
->>>>>>> Stashed changes
 	end
 
 end
