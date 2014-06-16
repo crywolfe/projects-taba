@@ -61,6 +61,7 @@ class JournalEntry < ActiveRecord::Base
 		@words_cloud = []
 		@words_cloud[0] = []
 		@words_cloud[1] = []
+
 		phrases.each do |phrase|
 
 			#need to gsub phrase space with + to make it encoding friendly
@@ -72,12 +73,12 @@ class JournalEntry < ActiveRecord::Base
 
 			global_value = jsonified_response["data"][0]["global_value"]
 
-
 			if jsonified_response["data"][0]["details"] == nil
 				word_cloud = ["neutral"]
 			else
 				word_cloud = jsonified_response["data"][0]["details"][0]["valuers_norm"].split(",")
 			end
+			# Use the following line of code when ready to take in more subjects for word cloud.
 			# word_cloud_2 = jsonified_response["data"][0]["details"][0]["valuables_norm"].split(",")
 
 			@words_cloud[0] << word_cloud

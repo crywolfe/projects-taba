@@ -12,9 +12,6 @@ class SamplePhrasesController < ApplicationController
 	end
 
 	def create
-		# @sample_phrases = SamplePhrase.new
-		# @journal_entries = JournalEntry.all
-
 		@journal_entry = JournalEntry.find_by(id: params[:id])
 		# @journal_entry.extract
 		# redirect_to(user_journal_entry_sample_phrases_path([current_user, @journal_entry]))
@@ -25,10 +22,18 @@ class SamplePhrasesController < ApplicationController
 	end
 
 	def show
-		@sample_phrases = SamplePhrase.all
-		@journal_entries = JournalEntry.all
-		@moods = Mood.all
-		@sample_phrase
+		@journal_entry = JournalEntry.find_by(params[:id])
+		@sample_phrases = @journal_entry.extract
+		@outcome = @journal_entry.get_sentiment(@sample_phrases)
+		neutral = -1
+		@outcome[1].each do |index|
+			if @outcome[1][index] == 0
+				neutral += 1
+			end
+		end
+		@average = (@outcome[1].inject(:+)/(@outcome[1].length - neutral))*10
+
+		render 'sample_phrases/show'
 	end
 
 

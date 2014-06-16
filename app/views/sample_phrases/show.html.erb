@@ -14,9 +14,9 @@
 <p>
 	The Global Mood Value for your journal entry from -100 to 100 is
 </p>
-<p>
-	<%= @average %>
-</p>
+<h1>
+	<%= @average.round %>
+</h1>
 
 <table class="center" border=1 cellpadding=5>
 	<caption><b>Phrases and Moods Results</b> </caption>
@@ -48,6 +48,6 @@
 	</tbody>
 </table>
 
-<!-- <%= link_to('Submit to Predictions', user_journal_entry_sample_phrases_path(current_user, @journal_entry.id)) %> -->
-
 <h3> <%= link_to('Word Cloud', new_user_journal_entry_path) %> </h3>
+=======
+<h3> <%= link_to('Add', new_user_journal_entry_path) %> another journal entry </h3>
