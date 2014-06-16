@@ -11,11 +11,7 @@
 <p><b><%= @journal_entry.body %></b></p>
 
 <p>---------------</p>
-<h4> 
+<h4>
 
-<!--   <%= button_to('Extract', user_journal_entry_path) %>
- -->	<button type='button'><a href="/users/<%= current_user.id %>/journal_entries/<%= @journal_entry.id %>">Extract</a></button> sample phrases from this journal entry.  
+<button type='button'><a href="/users/<%= current_user.id %>/journal_entries/<%= @journal_entry.id %>">Extract</a></button> sample phrases from this journal entry.
 </h4>
-
-
-<!-- <button type="button"><a href="/sample_phrases">Extract</a></button> -->
