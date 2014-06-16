@@ -12,17 +12,18 @@ class SamplePhrasesController < ApplicationController
 	end
 
 	def create
-		@journal_entry = JournalEntry.find_by(id: params[:id])
+		@journal_entry = JournalEntry.find_by(params[:id])
 		# @journal_entry.extract
 		# redirect_to(user_journal_entry_sample_phrases_path([current_user, @journal_entry]))
 		# redirect_to([:show, current_user, @journal_entry])
 		# @sample_phrases = @journal_entry.extract
-		@sample_phrases.save_extracted_phrases_with_moods
+		# @sample_phrases.save_extracted_phrases_with_moods
 		redirect_to(user_journal_entries_path)
 	end
 
 	def show
-		@journal_entry = JournalEntry.find_by(params[:id])
+		binding.pry
+		@journal_entry = JournalEntry.find(params[:journal_entry_id])
 		@sample_phrases = @journal_entry.extract
 		@outcome = @journal_entry.get_sentiment(@sample_phrases)
 		neutral = -1

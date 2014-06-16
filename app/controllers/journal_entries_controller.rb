@@ -16,6 +16,7 @@ class JournalEntriesController < ApplicationController
 			:user_id => current_user.id
 			)
 		@journal_entry.save
+		binding.pry
 		redirect_to(user_journal_entries_path)
 		# redirect_to(edit_user_journal_entry_sample_phrases_path)
 
