@@ -22,7 +22,6 @@ class SamplePhrasesController < ApplicationController
 	end
 
 	def show
-		binding.pry
 		@journal_entry = JournalEntry.find(params[:journal_entry_id])
 		@sample_phrases = @journal_entry.extract
 		@outcome = @journal_entry.get_sentiment(@sample_phrases)
